@@ -22,6 +22,9 @@
             width: 600px;
             margin-top: 25px;
         }
+        .change{
+            width: 600px;
+        }
         .list{
             padding: 100px;
         }
@@ -30,7 +33,11 @@
             justify-content: flex-end;
             justify-content: space-around;
         }
-       
+        button{
+                margin-top: 25px;
+                padding: 25px;
+                color:rgb(16, 46, 102)
+        }
     </style>
     <body>
         <h1>AWOLNATION</h1>
@@ -57,5 +64,26 @@
          <a> <img src="https://musicmattersmagazine.com/wp-content/uploads/2016/03/20160309-img_0065.jpg"alt="Picture" class="second">
         </div>
         <p>Image from: Music Matters Magazine</p>
+        <div class="change">
+        <h2>Something</h2>
+        <p>Something about something about AWOl</p>
+        <a> <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/20140615-150-Nova_Rock_2014.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"alt="Picture">
+        </div>
+            <div id="flex-wrapper">
+
+            </div>
+        <button onclick="changeColor()">Click Me!</button>
+
+    <script>
+        let images = ["https://upload.wikimedia.org/wikipedia/commons/c/c8/20140615-150-Nova_Rock_2014.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"]
+            let currentImage = 0
+            function rotate(){
+                currentImage +=1
+                if (currentImage > 3){
+                currentImage = 0
+                }
+                document.getElementById("timp").src = images[currentImage]
+            }
+    </script>
     </body>
 </html>
