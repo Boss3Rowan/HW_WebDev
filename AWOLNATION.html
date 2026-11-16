@@ -22,9 +22,7 @@
             width: 600px;
             margin-top: 25px;
         }
-        .change{
-            width: 600px;
-        }
+        
         .list{
             padding: 100px;
         }
@@ -37,6 +35,9 @@
                 margin-top: 25px;
                 padding: 25px;
                 color:rgb(16, 46, 102)
+        }
+        .extra-pic{
+            width: 600px
         }
     </style>
     <body>
@@ -61,29 +62,46 @@
         <h2>Fun Facts</h2>
         <p>An interesting thing about AWOLNATION is how their music style combines rock, electronic, and indie to create something unique. Aaron Bruno wanted the band to have a different sound from his previous projects, so he experimented with a variety of music styles. Over the years, AWOLNATION has released several successful albums and toured across the United States and other countries. The band's songs are often known for their energetic beats, emotional lyrics, and creative production. Because of their unique sound and memorable performances, AWOLNATION has built a strong fan base around the world.</p>
         <div>
-         <a> <img src="https://musicmattersmagazine.com/wp-content/uploads/2016/03/20160309-img_0065.jpg"alt="Picture" class="second">
+         <a> <img src="https://musicmattersmagazine.com/wp-content/uploads/2016/03/20160309-img_0065.jpg"alt="Picture" class="second" id="change" onmouseover="rotate()" onmouseout="rotateBack()">
         </div>
         <p>Image from: Music Matters Magazine</p>
-        <div class="change">
+        </div>
+
+
+        <button onclick="showhide()" id="button">Show More</button>
+        <div id="extra info">  
         <h2>Something</h2>
         <p>Something about something about AWOl</p>
-        <a> <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/20140615-150-Nova_Rock_2014.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"alt="Picture">
+        <a> <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/20140615-150-Nova_Rock_2014.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"alt="Picture" class="extra-pic">
         </div>
-            <div id="flex-wrapper">
-
-            </div>
-        <button onclick="changeColor()">Click Me!</button>
 
     <script>
-        let images = ["https://upload.wikimedia.org/wikipedia/commons/c/c8/20140615-150-Nova_Rock_2014.JPG?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"]
-            let currentImage = 0
-            function rotate(){
-                currentImage +=1
-                if (currentImage > 3){
-                currentImage = 0
-                }
-                document.getElementById("timp").src = images[currentImage]
-            }
+        let images = ["https://musicmattersmagazine.com/wp-content/uploads/2016/03/20160309-img_0065.jpg", "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwyNTQ0Nzk2MTQ2Ni1pbWFnZS1rcHZ6Z2RjaS5qcGc.jpg"
+        ]
+        let currentimage = 0
+
+        function rotate(){
+            currentimage = 1
+            document.getElementById("harrypotter").src = images[currentimage]
+        }
+
+        function rotateBack(){
+            currentimage = 0
+            document.getElementById("harrypotter").src = images[currentimage]
+        }
+
+        function showHide(){
+            let item = document.getElementById("extrapart")
+        }
+        
+      if(item.style.display == "block"){
+        item.style.display = "none"
+        document.getElementById("button").innerHTML = "Show More"
+      }else{
+        item.style.display ="block"
+        document.getElementById("button").innerHTML = "Show Less"
+    }
+
     </script>
     </body>
 </html>
